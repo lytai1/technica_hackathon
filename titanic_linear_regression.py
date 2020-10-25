@@ -24,7 +24,6 @@ X_train, X_test, y_train, y_test = train_test_split(data, target, test_size = 0.
 
 reg = LinearRegression().fit(X_train, y_train)
 y_pred = reg.predict(X_test)
-print(y_pred)
-print(y_test)
+
 accuracy = sum([(1 if y_pred[i]>0.5 else 0) == y_test[i] for i in range(len(y_pred))])/len(y_pred)
-print(accuracy)
+print("Accuracy of linear regression model = ", accuracy)
